@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  fileSystems."/mnt/storage" = {
+  fileSystems."/mnt/pool" = {
     fsType = "fuse.mergerfs";
     device = "/mnt/disk1:/mnt/disk2";
 
@@ -13,4 +13,8 @@
     ];
     depends = [ "/mnt/disk1" "/mnt/disk2" ];
   };
+
+  systemd.tmpfiles.rules = [
+    "d /mnt/storage/media 0775 - media - -"
+  ];
 }

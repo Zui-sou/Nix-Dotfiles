@@ -26,7 +26,6 @@
       stty -ixon
     '';
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake 'Nix Dots#nixServer'";
       edit = "nvim";
       sedit = "sudo nvim";
     };

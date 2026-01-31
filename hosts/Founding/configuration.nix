@@ -24,11 +24,10 @@
 
   users.users.maboroshi = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      tree
-    ];
+    extraGroups = [ "wheel" "media" ];
   };
+
+  users.groups.media = {};
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -38,8 +37,5 @@
     tmux
     mergerfs
     fuse3
-    cargo
-    nil
-    tailscale
   ];
 }
