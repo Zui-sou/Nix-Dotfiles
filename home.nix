@@ -17,6 +17,7 @@
     enable = true;
     shortcut = "s";
     baseIndex = 1;
+    extraConfig = "unbind-key Space"
   };
 
   programs.zsh = {
@@ -28,6 +29,7 @@
     shellAliases = {
       edit = "nvim";
       sedit = "sudo nvim";
+      gitTree = "git --no-pager log --oneline --graph --decorate --all"
     };
 
     oh-my-zsh = {

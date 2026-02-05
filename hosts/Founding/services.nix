@@ -1,6 +1,7 @@
 {
   imports = [
-   ./../../modules/services/tailscale.nix
    ./../../modules/services/jellyfin.nix
+   ./../../modules/services/samba.nix
+   ./../../modules/services/tailscale.nix
   ];
 }

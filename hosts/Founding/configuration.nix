@@ -14,7 +14,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
 
-  networking.hostName = "nixServer";
+  networking.hostName = "Founding";
   networking.networkmanager.enable = true;
   time.timeZone = "America/Denver";
 
@@ -26,8 +26,15 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "media" ];
   };
-
+  
   users.groups.media = {};
+  
+  systemd.tmpfiles.rules = [
+    "d /mnt/pool 0775 root media - -"
+    "d /mnt/pool/media 0775 root media - -"
+    "d /mnt/pool/media/Shows 0775 root media - -"
+    "d /mnt/pool/media/Movies 0775 root media - -"
+  ];
 
   environment.systemPackages = with pkgs; [
     neovim
@@ -37,5 +44,6 @@
     tmux
     mergerfs
     fuse3
+    recyclarr
   ];
 }

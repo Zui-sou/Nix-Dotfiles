@@ -13,8 +13,4 @@
     ];
     depends = [ "/mnt/disk1" "/mnt/disk2" ];
   };
-
-  systemd.tmpfiles.rules = [
-    "d /mnt/storage/media 0775 - media - -"
-  ];
 }

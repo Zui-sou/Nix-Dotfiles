@@ -1,5 +1,5 @@
 { 
-  description = "please fucking work i beg you";
+  description = "Flake for my laptop home server (Founding) and my personal laptop (Cart)";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
